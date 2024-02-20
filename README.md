@@ -26,6 +26,8 @@ Message format:
 }
 ```
 
+**Note:** The queue name on which the mailer will be subscribed to is `email_channel`.
+
 ![rabbitMQ Screen Shot](./images/rabbitmq_ss.png)
 
 ### Spring Boot Mailer
