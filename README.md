@@ -46,6 +46,21 @@ Message format:
 
 ## Local Set-up
 
+- The RabbitMQ management UI is available at `http://localhost:15672`
+- The MailHog Email Inbox UI is available at `http://localhost:8025`
+
+### Using Docker-Compose (Recommended)
+
+The `application.properties` file has been written to provide bias to running the entire setup on a single machine with as little setup required as possible.
+
+This will install the RabbitMQ broker and the MailHog SMTP server on its own. Run the below command to quickly setup all 3 components:
+
+```shell
+ docker-compose up -d
+```
+
+### Individually building components
+
 - Before running the spring-boot mailer, ensure that the queue and the SMTP server are up and running.
 
 ```shell
@@ -58,13 +73,12 @@ docker run -d --name mailhog -p 1025:1025 -p 8025:8025 mailhog/mailhog
 ```
 
 - Make any necessary changes required at `application.properties` file if needed.
-- Build and run the `MailerApplication.java` file at `src/main/java/` to start the spring-boot-mailer.
+- Build and run the `MainRunner.java` file at `src/main/java/` to start the spring-boot-mailer.
 
-### Using Docker Compose
+```shell
+# Build the project
+./gradlew clean build
 
-- This will use the JAR that has currently been built.
-- For this to work, ensure that the `queue.url` and `spring.mail.host` in _application.properties_ is set to either:
-  - **host.docker.internal** for both
-  - **rabbitmq** and **mailhog** respectively
-- Run the compose file as `docker-compose up -d`
-- If at first the `mailer-1` container fails, restart that container again.
+# Run the project
+java -jar .\build\libs\mailer-0.0.1-SNAPSHOT.jar 
+```

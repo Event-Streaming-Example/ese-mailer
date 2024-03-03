@@ -1,5 +1,7 @@
 FROM openjdk:17-jdk-alpine AS build
 
+LABEL ese.image.author="saumyabhatt10642"
+
 WORKDIR /app
 
 COPY gradlew .

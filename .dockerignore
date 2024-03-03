@@ -1,0 +1,16 @@
+# Gradle build directories
+.gradle/
+build/
+
+# IntelliJ IDEA directories
+.idea/
+
+# Compiled Java classes
+*.class
+
+# Dependencies managed by Gradle
+build/libs/
+build/classes/
+
+# Logs and other runtime files
+*.log
