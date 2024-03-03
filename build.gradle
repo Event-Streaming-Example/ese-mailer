@@ -25,11 +25,14 @@ dependencies {
 	implementation 'com.rabbitmq:amqp-client:5.20.0'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+	implementation "com.google.dagger:dagger:2.51"
+
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'com.google.dagger:dagger-compiler:2.51'
 
 	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 tasks.named('test') {

@@ -1,16 +1,20 @@
-package com.ese.mailer.domain.entities;
+package com.ese.mailer.core.domain.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
+
+import javax.inject.Inject;
 
 @Getter
 @Setter
-@Component
 public class EmailRequest {
 
     private String from;
     private String to;
     private String subject;
     private String content;
+
+    @Inject
+    public EmailRequest() {
+    }
 }
