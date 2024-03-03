@@ -82,3 +82,17 @@ docker run -d --name mailhog -p 1025:1025 -p 8025:8025 mailhog/mailhog
 # Run the project
 java -jar .\build\libs\mailer-0.0.1-SNAPSHOT.jar 
 ```
+
+---
+
+## Pushing Image
+
+On merging any PR to master will automatically trigger a push to the `latest` tag. If however any other image tag is to be published, use the below given commands:
+
+[DockerHub Repository](https://hub.docker.com/repository/docker/saumyabhatt10642/ese-mailer/general)
+
+```bash
+docker image build -t ese-mailer:tag .
+docker image tag ese-mailer:tag saumyabhatt10642/ese-mailer:tag
+docker push saumyabhatt10642/ese-mailer:tag
+```
