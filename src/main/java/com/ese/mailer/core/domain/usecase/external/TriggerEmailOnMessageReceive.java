@@ -1,6 +1,5 @@
 package com.ese.mailer.core.domain.usecase.external;
 
-import com.ese.mailer.application.exceptions.MessageParsingException;
 import com.ese.mailer.application.interfaces.PollingFunction;
 import com.ese.mailer.application.interfaces.SMTPClient;
 import com.ese.mailer.core.domain.entities.EmailRequest;

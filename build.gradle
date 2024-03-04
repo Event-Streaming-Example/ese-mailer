@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
+	id 'org.springframework.boot' version '3.2.3'
 	id 'io.spring.dependency-management' version '1.1.4'
 	id 'org.jetbrains.kotlin.jvm'
 }
@@ -24,9 +24,9 @@ repositories {
 dependencies {
 	implementation 'com.rabbitmq:amqp-client:5.20.0'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+	implementation "com.google.dagger:dagger:2.51"
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-	implementation "com.google.dagger:dagger:2.51"
 
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor 'com.google.dagger:dagger-compiler:2.51'
